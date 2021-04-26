@@ -27,6 +27,7 @@ stages:
 
           - task: SentrioDeploy@0
             inputs:
+              SentrioService: 'sentrio-platform'
               project: 'asdf'
               samplestring: 'asdf'
           - task: SonarQubePrepare@4
