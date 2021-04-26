@@ -29,7 +29,7 @@ stages:
               samplestring: 'Joe'
           - task: SonarQubePrepare@4
             inputs:
-              SonarQube: 'profile-sonarqube'
+              SonarQube: 'sonar-profile'
               scannerMode: 'Other'
               extraProperties: |
                 # Additional properties that will be passed to the scanner,
