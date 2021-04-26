@@ -1,3 +1,3 @@
 # Hello Azure
 
-Sample project 1
+Sample project: Hello!
