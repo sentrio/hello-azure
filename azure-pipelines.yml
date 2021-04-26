@@ -24,6 +24,9 @@ stages:
           - script: pwd
           - script: find ./
           #- script: ./gradlew sonarqube -Dsonar.projectKey=hello-azure
+          - task: sendDeployInfo@0
+            inputs:
+              samplestring: 'Joe'
           - task: SonarQubePrepare@4
             inputs:
               SonarQube: 'profile-sonarqube'
