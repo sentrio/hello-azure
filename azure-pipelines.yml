@@ -5,7 +5,7 @@
 
 
 trigger:
-- main
+  - main
 
 stages:
   - stage: Build_Test
@@ -14,43 +14,43 @@ stages:
     jobs:
       - job: build
         steps:
-        - script: echo Hello, world!
-          displayName: 'Run a one-line script'
+          - script: echo Hello, world!
+            displayName: 'Run a one-line script'
 
-        - script: |
-            echo Add other tasks to build, test, and deploy your project.
-            echo See https://aka.ms/yaml
-          displayName: 'Run a multi-line script'
-        - script: pwd
-        - script: find ./
-        #- script: ./gradlew sonarqube -Dsonar.projectKey=hello-azure
-        - task: SonarQubePrepare@4
-          inputs:
-            SonarQube: 'profile-sonarqube'
-            scannerMode: 'Other'
-            extraProperties: |
-              # Additional properties that will be passed to the scanner, 
-              # Put one key=value per line, example:
-              # sonar.exclusions=**/*.bin
-              sonar.projectKey=hello-azure
-        - task: Gradle@2
-          inputs:
-            gradleWrapperFile: 'gradlew'
-            tasks: 'build -x test --debug --stacktrace'
-            publishJUnitResults: false
-            javaHomeOption: 'JDKVersion'
-            jdkVersionOption: '1.11'
-            sonarQubeRunAnalysis: true
-            sqGradlePluginVersionChoice: 'specify'
-            sonarQubeGradlePluginVersion: '3.0'
-        - task: SonarQubePublish@4
-          inputs:
-            pollingTimeoutSec: '300'
-        - task: CopyFiles@2
-          inputs:
-            contents: 'build/**/*.jar'
-            targetFolder: '$(Build.ArtifactStagingDirectory)'
-        - task: PublishBuildArtifacts@1
-          inputs:
-            ArtifactName: 'drop'
-            publishLocation: 'Container'
+          - script: |
+              echo Add other tasks to build, test, and deploy your project.
+              echo See https://aka.ms/yaml
+            displayName: 'Run a multi-line script'
+          - script: pwd
+          - script: find ./
+          #- script: ./gradlew sonarqube -Dsonar.projectKey=hello-azure
+          - task: SonarQubePrepare@4
+            inputs:
+              SonarQube: 'profile-sonarqube'
+              scannerMode: 'Other'
+              extraProperties: |
+                # Additional properties that will be passed to the scanner,
+                # Put one key=value per line, example:
+                # sonar.exclusions=**/*.bin
+                sonar.projectKey=hello-azure
+          - task: Gradle@2
+            inputs:
+              gradleWrapperFile: 'gradlew'
+              tasks: 'build -x test --debug --stacktrace'
+              publishJUnitResults: false
+              javaHomeOption: 'JDKVersion'
+              jdkVersionOption: '1.11'
+              sonarQubeRunAnalysis: true
+              sqGradlePluginVersionChoice: 'specify'
+              sonarQubeGradlePluginVersion: '3.0'
+          - task: SonarQubePublish@4
+            inputs:
+              pollingTimeoutSec: '300'
+          - task: CopyFiles@2
+            inputs:
+              contents: 'build/**/*.jar'
+              targetFolder: '$(Build.ArtifactStagingDirectory)'
+          - task: PublishBuildArtifacts@1
+            inputs:
+              ArtifactName: 'drop'
+              publishLocation: 'Container'
