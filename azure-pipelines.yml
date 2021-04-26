@@ -23,7 +23,7 @@ stages:
           displayName: 'Run a multi-line script'
         - script: pwd
         - script: find ./
-        #- script: ./gradlew sonarqube -Dsonar.projectKey=hello-azure -Dsonar.host.url=https://sonarqube.profile.es  -Dsonar.login=e85ca388686a39937a360ef1b442851d80e5c9a4
+        #- script: ./gradlew sonarqube -Dsonar.projectKey=hello-azure
         - task: SonarQubePrepare@4
           inputs:
             SonarQube: 'profile-sonarqube'
