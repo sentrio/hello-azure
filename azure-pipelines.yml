@@ -27,7 +27,7 @@ stages:
             inputs:
               SentrioService: 'sentrio-platform'
               project: 'asdf'
-              samplestring: 'asdf1234'
+              samplestring: 'r3242342'
           - task: SonarQubePrepare@4
             inputs:
               SonarQube: 'sonarqube-profile'
