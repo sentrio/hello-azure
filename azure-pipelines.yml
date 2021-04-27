@@ -22,7 +22,12 @@ stages:
           - script: pwd
           - script: find ./
           #- script: ./gradlew sonarqube -Dsonar.projectKey=hello-azure
-
+          - task: SentrioDeploy@0
+            inputs:
+              SentrioService: 'sentrio-platform'
+              projectId: 'PI'
+              environment: 'dev'
+              commitMessage: '$(Build.SourceVersionMessage)'
           - task: SonarQubePrepare@4
             inputs:
               SonarQube: 'sonarqube-profile'
