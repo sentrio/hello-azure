@@ -6,7 +6,6 @@
 trigger:
   - main
 
-
 stages:
   - stage: Build_Test
     pool:
