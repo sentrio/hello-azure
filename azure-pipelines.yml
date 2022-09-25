@@ -52,7 +52,7 @@ stages:
           - task: SonarQubePublish@4
             inputs:
               pollingTimeoutSec: '300'
-          - task: CopyFiles@2
+          - task: CopyFiles@2.209.0
             inputs:
               contents: 'build/**/*.jar'
               targetFolder: '$(Build.ArtifactStagingDirectory)'
