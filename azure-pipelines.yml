@@ -58,7 +58,7 @@ stages:
               sonarqubeBaseUrl: 'https://sonarqube.profile.es'
               projectId: 'PI'
               application: 'hello-azure'
-              branch: 'master'              
+              branch: 'main'              
           - task: CopyFiles@2
             inputs:
               contents: 'build/**/*.jar'
