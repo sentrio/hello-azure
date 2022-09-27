@@ -57,7 +57,7 @@ stages:
               SentrioService: 'sentrio-platform'
               sonarqubeBaseUrl: 'https://sonarqube.profile.es'
               projectId: 'PI'
-              application: 'hello-azure'
+              sonarqubeApplicationId: 'hello-azure'
               branch: 'main'              
           - task: CopyFiles@2
             inputs:
