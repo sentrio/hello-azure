@@ -52,7 +52,7 @@ stages:
           - task: SonarQubePublish@4
             inputs:
               pollingTimeoutSec: '300'
-          - task: SentrioSonarqube@0
+          - task: SentrioSonarqube@1
             inputs:
               SentrioService: 'sentrio-platform'
               sonarqubeBaseUrl: 'https://sonarqube.profile.es'
