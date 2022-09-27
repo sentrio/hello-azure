@@ -42,7 +42,7 @@ stages:
           - task: Gradle@2
             inputs:
               gradleWrapperFile: 'gradlew'
-              tasks: 'build -x test --debug --stacktrace'
+              tasks: 'build -x test'
               publishJUnitResults: false
               javaHomeOption: 'JDKVersion'
               jdkVersionOption: '1.11'
