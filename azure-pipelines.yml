@@ -23,17 +23,6 @@ stages:
           - script: pwd
           - script: find ./
           #- script: ./gradlew sonarqube -Dsonar.projectKey=hello-azure
-          - task: PowerShell@2
-            displayName: 'Fetch extensions versions and rename vsix'
-            name: versions
-            inputs:
-              targetType: 'inline'
-              script: |
-                  # Write your PowerShell commands here.
-                  
-                  . (Join-Path "azp" "helpers.ps1")
-                  $sqExtensionManifest = "$env:BUILD_SOURCESDIRECTORY/build/extensions/sonarqube/vss-extension.json"
-                  echo $sqExtensionManifest   
           - task: SentrioDeploy@0
             inputs:
               SentrioService: 'sentrio-platform'
