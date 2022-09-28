@@ -55,6 +55,7 @@ stages:
           - task: SentrioSonarqube@1
             inputs:
               SentrioService: 'sentrio-platform'
+              SonarqubeService: 'sonarqube-profile'
               sonarqubeBaseUrl: 'https://sonarqube.profile.es'
               projectId: 'PI'
               sonarqubeApplicationId: 'hello-azure'
